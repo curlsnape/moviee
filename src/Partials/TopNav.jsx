@@ -1,7 +1,7 @@
 import axios from "../Utils/Axios";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-
+import noimage from "../../public/noimage.jpeg";
 function TopNav() {
   const [query, setquery] = useState("");
   const [search, setsearch] = useState(null);
@@ -34,20 +34,28 @@ function TopNav() {
         ></i>
       )}
 
-      <div className="searches w-[70%] rounded ml-[4.5%] overflow-auto absolute bg-white max-h-[50vh] top-[80%]">
+      <div className="searches w-[70%] rounded ml-[4.4%] overflow-auto absolute bg-white max-h-[50vh] top-[80%]">
         {search &&
-          search.map((item, index) => {
+          search.map((item, i) => {
             return (
-              <Link className="text-zinc-600 hover:text-black gap-5 items-center hover:bg-zinc-200 border-b-[1px] w-full py-10 flex justify-start px-5 bg-zinc-300 ">
+              <Link
+                key={i}
+                className="text-zinc-600 hover:text-black gap-5 items-center hover:bg-zinc-200 border-b-[1px] w-full py-10 flex justify-start px-5 bg-zinc-300 "
+              >
                 <img
-                  className="w-24 h-24 object-cover rounded-xl"
-                  src={`https://image.tmdb.org/t/p/original/${
-                    item.backdrop_path || item.poster_path
-                  }`}
-                  alt=""
+                  className="w-48 hover:scale-110 transition-all h-40 object-contain rounded-xl"
+                  src={
+                    item.backdrop_path || item.poster_path || item.profile_path
+                      ? `https://image.tmdb.org/t/p/original/${
+                          item.backdrop_path ||
+                          item.poster_path ||
+                          item.profile_path
+                        }`
+                      : noimage
+                  }
                 />
-                <span>
-                  {item.name || item.original_name || item.original_title}
+                <span className="font-semibold tracking-wide">
+                  {item.title || item.original_title || item.name}
                 </span>
               </Link>
             );
