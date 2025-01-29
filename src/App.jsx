@@ -6,7 +6,7 @@ import 'remixicon/fonts/remixicon.css'
 
 function App() {
   return (
-    <div className='h-full h-screen bg-[#16161d]'>
+    <div className='w-full font-[gilroy] h-screen bg-zinc-950 text-white'>
       <Routes>
         <Route path='/' element={<Home/>}/>
       </Routes>
