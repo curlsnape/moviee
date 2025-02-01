@@ -1,14 +1,15 @@
-import React, { useState } from 'react'
-import { ChevronDown, ChevronUp } from 'lucide-react';
-function Dropdown({ options, label,func }) {
-    const [isOpen, setIsOpen] = useState(false);
-    const [selected, setSelected] = useState(options[0] || "Select an option");
-  
-    const toggleDropdown = () => setIsOpen(!isOpen);
-    const handleSelect = (option) => {
-      setSelected(option);
-      setIsOpen(false);
-      func(option); }
+import React, { useState } from "react";
+import { ChevronDown, ChevronUp } from "lucide-react";
+function Dropdown({ options, label, func }) {
+  const [isOpen, setIsOpen] = useState(false);
+  const [selected, setSelected] = useState(options[0] || "Select an option");
+
+  const toggleDropdown = () => setIsOpen(!isOpen);
+  const handleSelect = (option) => {
+    setSelected(option);
+    setIsOpen(false);
+    func(option);
+  };
   return (
     <div className="relative inline-block w-64">
       <button
@@ -16,7 +17,11 @@ function Dropdown({ options, label,func }) {
         className="flex items-center text-xs justify-between w-full bg-zinc-800 rounded-sm px-4 py-2 text-white uppercase shadow-sm focus:outline-none "
       >
         <span>{selected}</span>
-        {isOpen ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
+        {isOpen ? (
+          <ChevronUp className="w-4 h-4" />
+        ) : (
+          <ChevronDown className="w-4 h-4" />
+        )}
       </button>
 
       {isOpen && (
@@ -33,7 +38,7 @@ function Dropdown({ options, label,func }) {
         </ul>
       )}
     </div>
-  )
+  );
 }
 
-export default Dropdown
+export default Dropdown;

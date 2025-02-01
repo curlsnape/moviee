@@ -16,7 +16,7 @@ function Sidenav() {
         </h4>
         <Link
           className="py-3 px-1 hover:px-5 tracking-wider duration-300 rounded font-semibold transition-all hover:text-white bg-transparent hover:bg-gradient-to-r  from-[#1E90FF] to-[#6050DC]"
-          to=""
+          to="/trending"
         >
           <i className="ri-fire-fill text-transparent shadow-md rounded-full bg-clip-text bg-gradient-to-r from-red-500 via-orange-400 to-yellow-400"></i>
           <span className="ml-2 ">Trending</span>
