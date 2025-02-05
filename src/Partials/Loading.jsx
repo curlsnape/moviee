@@ -1,5 +1,5 @@
 import React from 'react'
-import loader from '../../public/loader2.gif'
+import loader from '/loader2.gif'
 function Loading() {
   return (
     <div className='flex h-screen text-white flex-col bg-black justify-center items-center w-full'>

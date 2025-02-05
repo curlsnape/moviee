@@ -39,7 +39,7 @@ function Home() {
   }, [category]);
 
   return wallpaper && trending ? (
-    <div className="w-full h-full  flex">
+    <div className="w-full font-[gilroy] h-full  flex">
       <Sidenav />
       <div className="main w-[80%] overflow-x-hidden overflow-y-auto h-full ">
         <TopNav />
