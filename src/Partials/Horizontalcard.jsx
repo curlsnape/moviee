@@ -22,12 +22,12 @@ function Horizontalcard({ trend }) {
                   alt=""
                 />
               </div>
-              <div className="text py-1 px-2">
+              <div className="text-sm py-1 px-2">
                 <span className=" text-sm mb-1">
                   {item.title || item.name || item.original_title}
                 </span>
-                <p className="text-xs opacity-80">
-                  {item.overview.slice(0, 80)}...
+                <p className="text-xs mt-1 leading-4 opacity-80">
+                  {item.overview.slice(0, 60)}...
                   <Link className="text-zinc-400">More</Link>{" "}
                 </p>
               </div>
